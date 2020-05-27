@@ -11,7 +11,7 @@ public class TimerGameThread extends BaseGameThread {
 
 	public TimerGameThread(SurfaceHolder surfaceHolder, AbstractGamePanel gamePanel) {
 		super(surfaceHolder, gamePanel);
-		tickInterval = 200;
+		tickInterval = 100;
 	}
 	
 	public void setTickInterval(int millis) {
@@ -41,15 +41,18 @@ public class TimerGameThread extends BaseGameThread {
 				if (canvas != null) {
 					surfaceHolder.unlockCanvasAndPost(canvas);
 				}
-			}	// end finally
-			
+			}    // end finally
+
 			if (tickInterval > 0) {
 				try {
-					Thread.sleep(tickInterval);	
+					Thread.sleep(tickInterval);
 				} catch (InterruptedException e) {
 					// Do nothing
 				}
 			}
 		}
 	}
+
+
+
 }

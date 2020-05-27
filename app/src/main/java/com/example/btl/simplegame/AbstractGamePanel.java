@@ -35,6 +35,8 @@ public abstract class AbstractGamePanel extends SurfaceView implements SurfaceHo
 		requestFocus();
 		setWillNotDraw(true);
 		// setup brush
+		setTop(10);
+		setLeft(10);
 		panelColor = Color.GRAY;
 		paint = new Paint();
 	}
@@ -52,6 +54,10 @@ public abstract class AbstractGamePanel extends SurfaceView implements SurfaceHo
 		// start game thread
 		startGameLoop();
 	}
+	@Override
+	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+		// ...nothing right now
+	}
 
 	@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
@@ -65,13 +71,6 @@ public abstract class AbstractGamePanel extends SurfaceView implements SurfaceHo
 			}
 		}
 	}
-	
-
-	@Override
-	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-		// ...nothing right now
-	}
-	
 	// Set the color of the game panel background
 	public void setPanelColor(int color) {
 		panelColor = color;
@@ -108,6 +107,7 @@ public abstract class AbstractGamePanel extends SurfaceView implements SurfaceHo
 	// Pause game loop
 	protected void stopGameLoop() {
 		gameThread.setRunning(false);
+		gameThread.stop();
 	}
 	
 	// Create game loop given loop type

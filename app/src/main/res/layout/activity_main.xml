@@ -10,9 +10,10 @@
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="208dp"
         android:text="Chơi"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +32,7 @@
         android:id="@+id/editTextName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="152dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
@@ -43,10 +44,28 @@
         android:id="@+id/textView"
         android:layout_width="184dp"
         android:layout_height="24dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="108dp"
         android:text="Nhập vào tên của bạn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginTop="20dp"
+        android:text="Top Player"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHD" />
+
+    <ListView
+        android:id="@+id/lvPlayers"
+        android:layout_width="409dp"
+        android:layout_height="244dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLoad" />
 </androidx.constraintlayout.widget.ConstraintLayout>
